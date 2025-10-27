@@ -7,25 +7,21 @@
   <link rel="icon" type="image/png" href="img/favicon.jpeg" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Pacifico&display=swap" rel="stylesheet">
 
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-92Y8TSX64D"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-92Y8TSX64D"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-92Y8TSX64D');
+  </script>
 
-  gtag('config', 'G-92Y8TSX64D');
-</script>
-  
   <style>
-
     body {
       font-family: 'Poppins', sans-serif;
       margin: 0;
       background: linear-gradient(to bottom, #fffaf5, #f7f0e8);
       color: #4b2c20;
     }
-
 
     header {
       background-color: #3f2103;
@@ -37,7 +33,6 @@
       font-family: 'Pacifico', cursive;
     }
 
-    
     .navbar {
       background: #f5f3f2;
       text-align: center;
@@ -46,78 +41,85 @@
       top: 0;
       z-index: 999;
     }
+
     .navbar a {
       color: #3f2103;
       text-decoration: none;
       margin: 0 20px;
       font-weight: 600;
     }
+
     .navbar a:hover {
       color: #f2b56b;
     }
 
-
     .container {
       max-width: 950px;
       margin: auto;
-      padding: 20px;
+      padding: 40px 20px;
     }
 
-    h1 {
+  
+    .keunggulan-section {
       text-align: center;
-      color: #5a3d2b;
+      padding: 50px 20px;
     }
 
-    p {
-      text-align: center;
+    .keunggulan-section h2 {
+      font-size: 30px;
+      color: #4b2c20;
+      margin-bottom: 10px;
+      font-weight: 700;
     }
 
-   
-    .keunggulan {
+    .keunggulan-section p {
+      color: #5a3b2c;
+      margin-bottom: 30px;
+    }
+
+    .keunggulan-container {
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-around;
-      margin-top: 20px;
+      justify-content: center;
+      gap: 20px;
     }
 
-    .keunggulan .card {
-      background: #f5e6ca;
-      width: 260px;
-      padding: 15px;
-      margin: 10px;
-      border-radius: 12px;
+    .keunggulan-box {
+      background-color: #f7e8cf;
+      border-radius: 14px;
+      padding: 25px;
+      width: 270px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      text-align: center;
-      transition: 0.3s;
     }
 
-    .keunggulan .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    .keunggulan-box h3 {
+      font-weight: 700;
+      color: #4b2c20;
+      margin-bottom: 10px;
     }
 
- 
+    .keunggulan-box p {
+      color: #3f2103;
+      font-size: 15px;
+    }
+
+  
     .produk {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       margin-top: 30px;
+      gap: 20px;
     }
 
     .produk-card {
       background: #fff;
       width: 250px;
       border-radius: 12px;
-      margin: 10px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
       text-align: center;
       overflow: hidden;
       transition: 0.3s;
-    }
-
-    .produk-card:hover {
-      transform: scale(1.03);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     }
 
     .produk-card img {
@@ -142,11 +144,11 @@
       color: #3f2103;
     }
 
-  
+
     .cart-btn {
       position: fixed;
-      bottom: 50px;
-      right: 50px;
+      bottom: 40px;
+      right: 40px;
       background-color: #fac460;
       border-radius: 50%;
       padding: 18px;
@@ -168,7 +170,8 @@
       border-radius: 50%;
     }
 
-    #cart-modal {
+  
+    #cart-modal, #payment-modal {
       display: none;
       position: fixed;
       top: 0; left: 0;
@@ -181,11 +184,12 @@
 
     .cart-content {
       background: #fffaf5;
-      padding: 20px;
-      border-radius: 12px;
+      padding: 25px;
+      border-radius: 16px;
       width: 90%;
-      max-width: 400px;
+      max-width: 420px;
       color: #4b2c20;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.15);
     }
 
     .cart-item {
@@ -195,23 +199,14 @@
       margin: 10px 0;
     }
 
-    .cart-item button {
-      background-color: #f5e6ca;
-      border: none;
-      padding: 5px 8px;
-      border-radius: 5px;
-      cursor: pointer;
-      color: #4b2c20;
-    }
-
     .checkout-btn {
       background-color: #f5e6ca;
       border: none;
       width: 100%;
-      padding: 10px;
+      padding: 12px;
       font-weight: bold;
       cursor: pointer;
-      border-radius: 5px;
+      border-radius: 8px;
       margin-top: 10px;
       color: #4b2c20;
       transition: 0.3s;
@@ -221,152 +216,179 @@
       background-color: #f2b56b;
     }
 
-    
+  
     .testimoni {
-      background-color: #f5e6ca;
-      padding: 40px 20px;
       text-align: center;
-      border-radius: 15px;
-      margin: 50px auto;
-      max-width: 850px;
+      padding: 50px 20px;
+      background: #fcefdc;
+      border-radius: 16px;
+      margin: 40px 10px;
     }
 
-    .testi-container {
+    .testimoni h2 {
+      font-size: 26px;
+      margin-bottom: 25px;
+      color: #4b2c20;
+    }
+
+    .testi-box {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
+      gap: 20px;
     }
 
-    .testi-card {
-      background: white;
-      margin: 10px;
-      padding: 15px;
+    .testi-item {
+      background: #fff;
       border-radius: 10px;
-      width: 230px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      padding: 20px;
+      width: 260px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
       font-style: italic;
-    }
-
-   
-    #kontak {
-      text-align: center;
-      margin: 40px 0;
-    }
-
-    #kontak a {
       color: #3f2103;
-      font-weight: bold;
-      text-decoration: none;
-    }
-
-    #kontak a:hover {
-      color: #f2b56b;
     }
 
     footer {
+      background-color: #3f2103;
+      color: #f7f5f4;
       text-align: center;
-      background: #4b2c20;
-      color: white;
-      padding: 10px;
+      padding: 25px 10px;
+      font-size: 14px;
       margin-top: 40px;
     }
 
-    
-    @keyframes clickAnim {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.1); }
-      100% { transform: scale(1); }
+    footer a {
+      color: #fac460;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    #qr-code {
+      display: block;
+      margin: 15px auto;
+      border: 2px dashed #3f2103;
+      border-radius: 10px;
+      padding: 10px;
+      width: 150px;
+      height: 150px;
+      background: #fff;
     }
   </style>
 </head>
 
 <body>
   <header>🍮 Agar-Agar Milenial</header>
-
   <nav class="navbar">
     <a href="#produk">Produk</a>
     <a href="#testimoni">Testimoni</a>
     <a href="#kontak">Kontak</a>
   </nav>
 
-  <div class="container">
-    <h1>Camilan Segar Bikin Nagih!</h1>
-    <p>Pilih ukuran favoritmu. Tambah ke keranjang dan checkout langsung di halaman ini.</p>
 
-    <div class="keunggulan">
-      <div class="card">
+  <section class="keunggulan-section">
+    <h2>Camilan Segar Bikin Nagih!</h2>
+    <p>Pilih ukuran favoritmu. Tambah ke keranjang dan checkout langsung di halaman ini.</p>
+    <div class="keunggulan-container">
+      <div class="keunggulan-box">
         <h3>Segar dan Sehat</h3>
         <p>Dibuat dari bahan alami seperti rumput laut murni yang kaya serat dan rendah kalori, cocok untuk gaya hidup sehat.</p>
       </div>
-      <div class="card">
+      <div class="keunggulan-box">
         <h3>Rasa Kekinian</h3>
         <p>Tersedia dalam berbagai varian rasa populer seperti cokelat, stroberi, dan original — semua disukai anak muda!</p>
       </div>
-      <div class="card">
+      <div class="keunggulan-box">
         <h3>Praktis dan Menyegarkan</h3>
         <p>Kemasan praktis dan mudah dibawa, cocok untuk bekal, camilan di kantor, atau teman santai di rumah.</p>
       </div>
     </div>
+  </section>
 
-    <h2 id="produk" style="text-align:center; margin-top:40px;"> Pilihan Produk</h2>
+
+  <div class="container" id="produk">
+    <h2 style="text-align:center;">Pilihan Produk</h2>
     <div class="produk">
       <div class="produk-card">
-        <img src="img/slide_1.jpg" alt="Agar Rasa Mangga" />
+        <img src="img/slide_1.jpg" alt="Mangga" />
         <h3>Agar-Agar Rasa Mangga</h3>
         <p>Rp 10.000</p>
-        <button onclick="addToCart('Agar-Agar Rasa Mangga', 10000, event)">Tambah ke Keranjang</button>
+        <button onclick="addToCart('Agar-Agar Rasa Mangga', 10000)">Tambah ke Keranjang</button>
       </div>
       <div class="produk-card">
-        <img src="img/slide_2.jpg" alt="Agar Rasa Gula Merah" />
+        <img src="img/slide_2.jpg" alt="Gula Merah" />
         <h3>Agar-Agar Rasa Gula Merah</h3>
         <p>Rp 10.000</p>
-        <button onclick="addToCart('Agar-Agar Rasa Gula Merah', 10000, event)">Tambah ke Keranjang</button>
+        <button onclick="addToCart('Agar-Agar Rasa Gula Merah', 10000)">Tambah ke Keranjang</button>
       </div>
       <div class="produk-card">
-        <img src="img/slide_3.jpg" alt="Agar Rasa Coklat" />
+        <img src="img/slide_3.jpg" alt="Coklat" />
         <h3>Agar-Agar Rasa Coklat</h3>
         <p>Rp 10.000</p>
-        <button onclick="addToCart('Agar-Agar Rasa Coklat', 10000, event)">Tambah ke Keranjang</button>
+        <button onclick="addToCart('Agar-Agar Rasa Coklat', 10000)">Tambah ke Keranjang</button>
       </div>
       <div class="produk-card">
-        <img src="img/slide_4.jpg" alt="Agar Rasa Stroberi" />
+        <img src="img/slide_4.jpg" alt="Stroberi" />
         <h3>Agar-Agar Rasa Stroberi</h3>
         <p>Rp 10.000</p>
-        <button onclick="addToCart('Agar-Agar Rasa Stroberi', 10000, event)">Tambah ke Keranjang</button>
+        <button onclick="addToCart('Agar-Agar Rasa Stroberi', 10000)">Tambah ke Keranjang</button>
       </div>
     </div>
   </div>
 
- 
+
   <section class="testimoni" id="testimoni">
     <h2>💬 Kata Mereka</h2>
-    <div class="testi-container">
-      <div class="testi-card">"Rasanya enak banget, anak-anak suka semua!" – Rina</div>
-      <div class="testi-card">"Kemasan praktis dan segar, cocok buat bekal." – Dwi</div>
-      <div class="testi-card">"Varian rasanya unik, favoritku stroberi!" – Yudi</div>
+    <div class="testi-box">
+      <div class="testi-item">"Rasanya enak banget, anak-anak suka semua!" – Rina</div>
+      <div class="testi-item">"Kemasan praktis dan segar, cocok buat bekal." – Dwi</div>
+      <div class="testi-item">"Varian rasanya unik, favoritku stroberi!" – Yudi</div>
     </div>
   </section>
 
-  
-  <section id="kontak">
+
+  <section id="kontak" style="text-align:center;">
     <h2>Hubungi Kami</h2>
     <p>WhatsApp: <a href="https://wa.me/6281316536685" target="_blank">Chat Sekarang</a></p>
     <p>Instagram: <a href="https://instagram.com/agaragarmilenial" target="_blank">@agaragarmilenial</a></p>
   </section>
 
-  
-  <div class="cart-btn" onclick="openCart()">
-    🛒
-    <div class="cart-count" id="cart-count">0</div>
-  </div>
+
+  <div class="cart-btn" onclick="openCart()">🛒<div class="cart-count" id="cart-count">0</div></div>
+
 
   <div id="cart-modal">
     <div class="cart-content">
       <h2>Keranjang Belanja</h2>
       <div id="cart-items"></div>
       <p id="total-price"><strong>Total:</strong> Rp 0</p>
-      <button class="checkout-btn" onclick="checkout()">Checkout</button>
-      <button class="checkout-btn" style="background:#ddd;margin-top:5px;" onclick="closeCart()">Tutup</button>
+      <button class="checkout-btn" onclick="openPayment()">Checkout</button>
+      <button class="checkout-btn" style="background:#ddd" onclick="closeCart()">Tutup</button>
+    </div>
+  </div>
+
+  
+  <div id="payment-modal">
+    <div class="cart-content">
+      <h2>Halaman Pembayaran</h2>
+      <label>Nama Penerima:</label><br>
+      <input id="nama" style="width:95%;padding:10px;margin:5px 0;border-radius:6px;border:1px solid #ccc;"><br>
+      <label>Alamat Penerima:</label><br>
+      <input id="alamat" style="width:95%;padding:10px;margin:5px 0;border-radius:6px;border:1px solid #ccc;"><br>
+      <label>No Handphone:</label><br>
+      <input id="nohp" style="width:95%;padding:10px;margin:5px 0;border-radius:6px;border:1px solid #ccc;" oninput="generateQR()"><br>
+      <label>Metode Pembayaran:</label><br>
+      <select id="metode" style="width:100%;padding:10px;margin:5px 0;border-radius:6px;border:1px solid #ccc;">
+        <option value="">Pilih</option>
+        <option>Transfer BCA</option>
+        <option>Transfer BNI</option>
+        <option>Transfer Mandiri</option>
+        <option>Transfer CIMB Niaga</option>
+        <option>Transfer SeaBank</option>
+        <option>QRIS</option>
+      </select>
+      <img id="qr-code" src="" alt="QR Code">
+      <button class="checkout-btn" onclick="finishPayment()">Selesai</button>
+      <button class="checkout-btn" style="background:#ddd" onclick="closePayment()">Tutup</button>
     </div>
   </div>
 
@@ -377,73 +399,57 @@
   <script>
     let cart = [];
 
-    function addToCart(name, price, event) {
-      const btn = event.target;
-      btn.style.animation = "clickAnim 0.3s";
-      setTimeout(() => btn.style.animation = "", 300);
-
+    function addToCart(name, price) {
       const item = cart.find(i => i.name === name);
-      if (item) {
-        item.qty++;
-      } else {
-        cart.push({ name, price, qty: 1 });
-      }
+      if (item) item.qty++;
+      else cart.push({ name, price, qty: 1 });
       updateCartCount();
-      alert(name + " ditambahkan ke keranjang!");
+      alert(`${name} ditambahkan ke keranjang!`);
     }
 
     function updateCartCount() {
-      const count = cart.reduce((sum, i) => sum + i.qty, 0);
-      document.getElementById("cart-count").innerText = count;
+      document.getElementById("cart-count").innerText = cart.reduce((s, i) => s + i.qty, 0);
     }
 
     function openCart() {
-      const modal = document.getElementById("cart-modal");
-      const cartItems = document.getElementById("cart-items");
-      const totalPrice = document.getElementById("total-price");
-
-      cartItems.innerHTML = "";
+      const items = document.getElementById("cart-items");
       let total = 0;
-
-      cart.forEach((item, index) => {
-        total += item.price * item.qty;
-        cartItems.innerHTML += `
-          <div class="cart-item">
-            <span>${item.name}</span>
-            <div>
-              <button onclick="changeQty(${index}, -1)">-</button>
-              <span> ${item.qty} </span>
-              <button onclick="changeQty(${index}, 1)">+</button>
-            </div>
-          </div>
-        `;
-      });
-
-      totalPrice.innerHTML = "<strong>Total:</strong> Rp " + total.toLocaleString();
-      modal.style.display = "flex";
+      items.innerHTML = cart.map((i, idx) => {
+        total += i.price * i.qty;
+        return `<div class='cart-item'><span>${i.name}</span>
+        <div><button onclick='changeQty(${idx},-1)'>-</button> ${i.qty} <button onclick='changeQty(${idx},1)'>+</button></div></div>`;
+      }).join('');
+      document.getElementById("total-price").innerHTML = `<strong>Total:</strong> Rp ${total.toLocaleString()}`;
+      document.getElementById("cart-modal").style.display = "flex";
     }
 
-    function closeCart() {
-      document.getElementById("cart-modal").style.display = "none";
+    function closeCart(){ document.getElementById("cart-modal").style.display="none"; }
+    function changeQty(i,d){ cart[i].qty+=d; if(cart[i].qty<=0)cart.splice(i,1); openCart(); updateCartCount(); }
+
+    function openPayment(){
+      document.getElementById("cart-modal").style.display="none";
+      document.getElementById("payment-modal").style.display="flex";
     }
 
-    function changeQty(index, delta) {
-      cart[index].qty += delta;
-      if (cart[index].qty <= 0) cart.splice(index, 1);
-      openCart();
-      updateCartCount();
+    function closePayment(){
+      document.getElementById("payment-modal").style.display="none";
     }
 
-    function checkout() {
-      if (cart.length === 0) {
-        alert("Keranjang masih kosong!");
-        return;
+    function generateQR(){
+      const nohp=document.getElementById("nohp").value;
+      const qr=document.getElementById("qr-code");
+      if(nohp){
+        qr.src=`https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(nohp)}`;
+      }else{
+        qr.src="";
       }
-      let total = cart.reduce((sum, i) => sum + i.price * i.qty, 0);
-      alert("Checkout berhasil!\nTotal pembayaran: Rp " + total.toLocaleString());
-      cart = [];
+    }
+
+    function finishPayment(){
+      alert("Pembayaran berhasil! Terima kasih telah berbelanja 💛");
+      cart=[];
       updateCartCount();
-      closeCart();
+      closePayment();
     }
   </script>
 </body>
