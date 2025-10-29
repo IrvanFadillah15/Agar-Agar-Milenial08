@@ -459,18 +459,31 @@
     const nohp = document.getElementById("nohp").value.trim();
     const metode = document.getElementById("metode").value;
     const vaDiv = document.getElementById("va-number");
+    const qrImg = document.getElementById("qr-code");
 
-    // Sembunyikan dulu kalau belum lengkap
+    // sembunyikan dulu
     vaDiv.style.display = "none";
+    qrImg.style.display = "none";
 
-    // Kalau semua form terisi dan metode transfer
+    // Kalau metode transfer
     if (metode.includes("Transfer") && nama && alamat && nohp) {
       vaDiv.style.display = "block";
       vaDiv.innerText = `VA: 1508${nohp}`;
     }
+
+    // Kalau metode QRIS
+    if (metode === "QRIS" && nama && alamat && nohp) {
+      // Buat data unik buat QR-nya
+      const dataQR = `Nama: ${nama}\nAlamat: ${alamat}\nNo HP: ${nohp}\nMetode: QRIS`;
+      const encoded = encodeURIComponent(dataQR);
+
+      // Gunakan API QR Code gratis dari goqr.me
+      qrImg.src = `https://api.qrserver.com/v1/create-qr-code/?data=${encoded}&size=200x200`;
+      qrImg.alt = "QR Code Pembayaran";
+      qrImg.style.display = "block";
+    }
   }
 
-  // Jalankan otomatis saat input berubah
   document.addEventListener("input", updateVA);
   document.getElementById("metode").addEventListener("change", updateVA);
 </script>
