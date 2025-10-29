@@ -7,6 +7,7 @@
   <link rel="icon" type="image/png" href="img/favicon.jpeg" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Pacifico&display=swap" rel="stylesheet">
 
+  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-92Y8TSX64D"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -49,9 +50,7 @@
       font-weight: 600;
     }
 
-    .navbar a:hover {
-      color: #f2b56b;
-    }
+    .navbar a:hover { color: #f2b56b; }
 
     .container {
       max-width: 950px;
@@ -59,7 +58,6 @@
       padding: 40px 20px;
     }
 
-  
     .keunggulan-section {
       text-align: center;
       padding: 50px 20px;
@@ -92,18 +90,9 @@
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
 
-    .keunggulan-box h3 {
-      font-weight: 700;
-      color: #4b2c20;
-      margin-bottom: 10px;
-    }
+    .keunggulan-box h3 { font-weight: 700; color: #4b2c20; margin-bottom: 10px; }
+    .keunggulan-box p { color: #3f2103; font-size: 15px; }
 
-    .keunggulan-box p {
-      color: #3f2103;
-      font-size: 15px;
-    }
-
-  
     .produk {
       display: flex;
       flex-wrap: wrap;
@@ -144,7 +133,6 @@
       color: #3f2103;
     }
 
-
     .cart-btn {
       position: fixed;
       bottom: 40px;
@@ -170,7 +158,6 @@
       border-radius: 50%;
     }
 
-  
     #cart-modal, #payment-modal {
       display: none;
       position: fixed;
@@ -212,11 +199,8 @@
       transition: 0.3s;
     }
 
-    .checkout-btn:hover {
-      background-color: #f2b56b;
-    }
+    .checkout-btn:hover { background-color: #f2b56b; }
 
-  
     .testimoni {
       text-align: center;
       padding: 50px 20px;
@@ -264,7 +248,7 @@
     }
 
     #qr-code {
-      display: block;
+      display: none;
       margin: 15px auto;
       border: 2px dashed #3f2103;
       border-radius: 10px;
@@ -272,6 +256,14 @@
       width: 150px;
       height: 150px;
       background: #fff;
+    }
+
+    #va-number {
+      display: none;
+      text-align: center;
+      font-weight: bold;
+      color: #3f2103;
+      margin-top: 10px;
     }
   </style>
 </head>
@@ -284,18 +276,17 @@
     <a href="#kontak">Kontak</a>
   </nav>
 
-
   <section class="keunggulan-section">
     <h2>Camilan Segar Bikin Nagih!</h2>
     <p>Pilih ukuran favoritmu. Tambah ke keranjang dan checkout langsung di halaman ini.</p>
     <div class="keunggulan-container">
       <div class="keunggulan-box">
         <h3>Segar dan Sehat</h3>
-        <p>Dibuat dari bahan alami seperti rumput laut murni yang kaya serat dan rendah kalori, cocok untuk gaya hidup sehat.</p>
+        <p>Dibuat dari bahan alami seperti rumput laut murni yang kaya serat dan rendah kalori.</p>
       </div>
       <div class="keunggulan-box">
         <h3>Rasa Kekinian</h3>
-        <p>Tersedia dalam berbagai varian rasa populer seperti cokelat, stroberi, dan original — semua disukai anak muda!</p>
+        <p>Varian rasa populer seperti cokelat, stroberi, dan original — disukai anak muda!</p>
       </div>
       <div class="keunggulan-box">
         <h3>Praktis dan Menyegarkan</h3>
@@ -303,7 +294,6 @@
       </div>
     </div>
   </section>
-
 
   <div class="container" id="produk">
     <h2 style="text-align:center;">Pilihan Produk</h2>
@@ -332,7 +322,7 @@
         <p>Rp 10.000</p>
         <button onclick="addToCart('Agar-Agar Rasa Stroberi', 10000)">Tambah ke Keranjang</button>
       </div>
-       <div class="produk-card">
+      <div class="produk-card">
         <img src="img/slide_5.jpg" alt="Melon" />
         <h3>Agar-Agar Rasa Melon</h3>
         <p>Rp 10.000</p>
@@ -340,7 +330,6 @@
       </div>
     </div>
   </div>
-
 
   <section class="testimoni" id="testimoni">
     <h2>💬 Kata Mereka</h2>
@@ -351,16 +340,13 @@
     </div>
   </section>
 
-
   <section id="kontak" style="text-align:center;">
     <h2>Hubungi Kami</h2>
     <p>WhatsApp: <a href="https://wa.me/6281316536685" target="_blank">Chat Sekarang</a></p>
     <p>Instagram: <a href="https://instagram.com/agaragarmilenial" target="_blank">@agaragarmilenial</a></p>
   </section>
 
-
   <div class="cart-btn" onclick="openCart()">🛒<div class="cart-count" id="cart-count">0</div></div>
-
 
   <div id="cart-modal">
     <div class="cart-content">
@@ -372,7 +358,6 @@
     </div>
   </div>
 
-  
   <div id="payment-modal">
     <div class="cart-content">
       <h2>Halaman Pembayaran</h2>
@@ -381,9 +366,9 @@
       <label>Alamat Penerima:</label><br>
       <input id="alamat" style="width:95%;padding:10px;margin:5px 0;border-radius:6px;border:1px solid #ccc;"><br>
       <label>No Handphone:</label><br>
-      <input id="nohp" style="width:95%;padding:10px;margin:5px 0;border-radius:6px;border:1px solid #ccc;" oninput="generateQR()"><br>
+      <input id="nohp" style="width:95%;padding:10px;margin:5px 0;border-radius:6px;border:1px solid #ccc;"><br>
       <label>Metode Pembayaran:</label><br>
-      <select id="metode" style="width:100%;padding:10px;margin:5px 0;border-radius:6px;border:1px solid #ccc;">
+      <select id="metode" style="width:100%;padding:10px;margin:5px 0;border-radius:6px;border:1px solid #ccc;" onchange="showPaymentOption()">
         <option value="">Pilih</option>
         <option>Transfer BCA</option>
         <option>Transfer BNI</option>
@@ -392,7 +377,10 @@
         <option>Transfer SeaBank</option>
         <option>QRIS</option>
       </select>
-      <img id="qr-code" src="" alt="QR Code">
+
+      <div id="va-number">VA: 1234 5678 91011</div>
+      <img id="qr-code" src="img/qris.png" alt="QR Code Pembayaran">
+
       <button class="checkout-btn" onclick="finishPayment()">Selesai</button>
       <button class="checkout-btn" style="background:#ddd" onclick="closePayment()">Tutup</button>
     </div>
@@ -410,7 +398,6 @@
       if (item) item.qty++;
       else cart.push({ name, price, qty: 1 });
       updateCartCount();
-      alert(`${name} ditambahkan ke keranjang!`);
     }
 
     function updateCartCount() {
@@ -441,13 +428,20 @@
       document.getElementById("payment-modal").style.display="none";
     }
 
-    function generateQR(){
-      const nohp=document.getElementById("nohp").value;
-      const qr=document.getElementById("qr-code");
-      if(nohp){
-        qr.src=`https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(nohp)}`;
-      }else{
-        qr.src="";
+    function showPaymentOption() {
+      const metode = document.getElementById("metode").value;
+      const va = document.getElementById("va-number");
+      const qr = document.getElementById("qr-code");
+
+      if (metode === "QRIS") {
+        va.style.display = "none";
+        qr.style.display = "block";
+      } else if (metode.includes("Transfer")) {
+        qr.style.display = "none";
+        va.style.display = "block";
+      } else {
+        va.style.display = "none";
+        qr.style.display = "none";
       }
     }
 
@@ -458,5 +452,28 @@
       closePayment();
     }
   </script>
+  <script>
+  function updateVA() {
+    const nama = document.getElementById("nama").value.trim();
+    const alamat = document.getElementById("alamat").value.trim();
+    const nohp = document.getElementById("nohp").value.trim();
+    const metode = document.getElementById("metode").value;
+    const vaDiv = document.getElementById("va-number");
+
+    // Sembunyikan dulu kalau belum lengkap
+    vaDiv.style.display = "none";
+
+    // Kalau semua form terisi dan metode transfer
+    if (metode.includes("Transfer") && nama && alamat && nohp) {
+      vaDiv.style.display = "block";
+      vaDiv.innerText = `VA: 1508${nohp}`;
+    }
+  }
+
+  // Jalankan otomatis saat input berubah
+  document.addEventListener("input", updateVA);
+  document.getElementById("metode").addEventListener("change", updateVA);
+</script>
+
 </body>
 </html>
